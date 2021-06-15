@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  get 'details/index'
   get 'pages/home'
   devise_for :views
   devise_for :users
