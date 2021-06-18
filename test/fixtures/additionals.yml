@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  product_age: 1
+  imperfections: MyString
+  waranty: MyString
+  condition: MyString
+  product: one
+
+two:
+  color: MyString
+  product_age: 1
+  imperfections: MyString
+  waranty: MyString
+  condition: MyString
+  product: two

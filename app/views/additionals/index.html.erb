@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Additionals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Product age</th>
+      <th>Imperfections</th>
+      <th>Waranty</th>
+      <th>Condition</th>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @additionals.each do |additional| %>
+      <tr>
+        <td><%= additional.color %></td>
+        <td><%= additional.product_age %></td>
+        <td><%= additional.imperfections %></td>
+        <td><%= additional.waranty %></td>
+        <td><%= additional.condition %></td>
+        <td><%= additional.product_id %></td>
+        <td><%= link_to 'Show', additional %></td>
+        <td><%= link_to 'Edit', edit_additional_path(additional) %></td>
+        <td><%= link_to 'Destroy', additional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Additional', new_additional_path %>

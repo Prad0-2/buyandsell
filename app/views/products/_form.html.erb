@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="field">
     <%= form.label :buyer_id %>
     <%= form.number_field :buyer_id %>
   </div>
@@ -34,11 +39,12 @@
   <div class="field">
     <%= form.label :sold_out %>
     <%= form.check_box :sold_out %>
-  </div>
+  </div>  
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id , value: current_user.id%>
+    
   </div>
 
   <div class="actions">

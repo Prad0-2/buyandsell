@@ -1,0 +1,8 @@
+
+
+<h2>Payment </h2>
+<% if current_user.name==nil || current_user.number==nil  %>
+  <h4 class="profileAlert">Update Profile to Buy<%= link_to "Update Profile" , details_edit_path(current_user) , class:"btn btn-light" %></h4>
+<%else%>
+  <h1> THIS IS PAYMENT PAGE </h1> 
+<% end %>

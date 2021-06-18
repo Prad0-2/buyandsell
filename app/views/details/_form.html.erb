@@ -1,0 +1,35 @@
+<%= form_with url: '/details/edit/' , model:detail do |form| %>
+    <% if detail.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(detail.errors.count, "error") %> prohibited this product from being saved:</h2>
+  
+        <ul>
+          <% details.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field" style="width:30%">
+      <%= form.label :name %>
+      <%= form.text_field :name ,  class:"form-control"%>
+    </div>
+    <div class="field" style="width:30%">
+      <%= form.label :email%>
+      <%= form.text_field :email , :disabled => true,  class:"form-control"%>
+    </div>
+    <div class="field" style="width:30%">
+      <%= form.label :number , "Mobile Number"%>
+      <%= form.text_field :number ,  class:"form-control"%>
+    </div>
+    <div class="field" style="width:30%">
+      <%= form.label :address %>
+      <%= form.text_area :address ,  class:"form-control"%>
+    </div>
+
+    <div class="actions" style="margin-top:40px">
+      <%= form.submit "Update Profile",class:"btn btn-success "%>
+      <%= link_to "Back" , payments_new_path , class:"btn btn-light" %>
+      
+    </div>
+  <% end %>
