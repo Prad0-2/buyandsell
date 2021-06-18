@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>New Additional</h1>
+
+<%= form_with(model: @additional , url: product_additionals_path(params[:product_id]) , local: true) do |form| %>
+    <%= render partial: 'form', additional: @additional , locals: { form: form } %>
+<% end %> 

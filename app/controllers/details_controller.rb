@@ -1,4 +1,32 @@
 class DetailsController < ApplicationController
   def index
+    user = User.find(params[:id])
+    @products = @user.products
+    @purchasedProduct = Product.where(buyerId: @user.id)
   end
+  def show
+    render '/payments/new'
+  end
+  def edit
+    @detail = User.find(params[:id]) 
+    @@detail_id = params[:id]
+  end
+  
+  def update
+    @detail = User.find(@@detail_id)
+    
+    respond_to do |format|
+      if @detail.update(detail_params)
+        format.html { redirect_to details_index_path(@detail) }
+      else
+        format.html { render 'edit' }
+      end
+    end
+  end
+
+  private 
+    def detail_params
+      params.require(:user).permit(:name , :email,:number ,:address)
+    end
+
 end

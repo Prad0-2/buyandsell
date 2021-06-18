@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @additional.color %>
+</p>
+
+<p>
+  <strong>Product age:</strong>
+  <%= @additional.product_age %>
+</p>
+
+<p>
+  <strong>Imperfections:</strong>
+  <%= @additional.imperfections %>
+</p>
+
+<p>
+  <strong>Waranty:</strong>
+  <%= @additional.waranty %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @additional.condition %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @additional.product_id %>
+</p>
+
+<%= link_to 'buy',  new_payment_path %>
