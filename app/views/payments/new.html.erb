@@ -1,8 +1,46 @@
-
+<script>
+localStorage.setItem("product_id", <%= @product_id %>);
+</script>
 
 <h2>Payment </h2>
+<%= @product_id %>
+
 <% if current_user.name==nil || current_user.number==nil  %>
-  <h4 class="profileAlert">Update Profile to Buy<%= link_to "Update Profile" , details_edit_path(current_user) , class:"btn btn-light" %></h4>
+  <% a = '/details/edit/'  + current_user.id.to_s + '/' + @product_id %>
+  <h4 class="profileAlert">Update Profile to Buy<%= link_to "Update Profile" , a , class:"btn btn-light" %></h4>
 <%else%>
-  <h1> THIS IS PAYMENT PAGE </h1> 
+
+<%= form_with(model: @payment , url:'/payments/create' )  do |form| %>
+
+      <% if @payment.errors.any? %>
+            <div id="error_explanation">
+                  <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                  <ul>
+                  <% @payment.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                  <% end %>
+                  </ul>
+            </div>
+      <% end %>
+  
+    <div>
+      <strong>Price:</strong>
+      <%=  @amount %>
+    </div>
+    
+    <div class="field" style="width:500px">
+    <%= form.select :method, ['credit card', 'direct cash','google gpay'] , class:"form-control" %>
+    </div>
+
+    
+    
+    
+    
+    <div style="margin-top:40px">
+    <%= form.submit "pay" , class:"btn btn-success btnw btnwhite"%>
+  </div>
+  <% end %>   
+
+
 <% end %>

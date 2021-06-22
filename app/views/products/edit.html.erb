@@ -1,6 +1,14 @@
-<h1>Editing Product</h1>
+<%= link_to 'Back', root_path %>
+
+<h1 style="color:#707070; margin-top:5px; margin-bottom:35px">Edit the Product</h1>
+
+
+
+
+
+<button type="button" class="btn btn-secondary">
+<%= link_to 'Show Product', @product, class:"linkInButton" %>
+</button>
 
 <%= render 'form', product: @product %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>

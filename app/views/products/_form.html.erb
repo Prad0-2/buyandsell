@@ -1,3 +1,4 @@
+<div class="commonContainer">
 <%= form_with(model: product) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -11,43 +12,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field inputFieldContainer" >
+    <%= form.label :name %></br>
+    <%= form.text_field :name ,:required => true , class:'inputField'%>
   </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
+  <div class="field inputFieldContainer">
+    <%= form.label :category %></br>
+    <%= form.text_field :category,:required => true, class:'inputField' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="field inputFieldContainer">
+    <%= form.label :description %></br>
+    <%= form.text_field :description,:required => true, class:'inputField' %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+  <div class="field inputFieldContainer">
+    <%= form.label :amount %></br>
+    <%= form.number_field :amount,:required => true, class:'inputField' %>
   </div>
 
-  <div class="field">
-    <%= form.label :buyer_id %>
-    <%= form.number_field :buyer_id %>
+  
+  <div class="field inputFieldContainer" >
+  <%= form.label :buyer_id %></br>
+  <%= form.number_field :buyer_id %>
   </div>
-
-  <div class="field">
+  
+  
+  <div class="field inputFieldContainer">
+  <%= form.label :user_id %></br>
+  <%= form.text_field :user_id , value: current_user.id%>    
+  </div>  
+  <div class="field inputFieldContainer">
     <%= form.label :sold_out %>
     <%= form.check_box :sold_out %>
   </div>  
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id , value: current_user.id%>
-    
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  
+  <div class="actions ">
+  <%= form.submit "Submit", class:"productBtn"%>
   </div>
 <% end %>
+</div>

@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all
+    @payments = Payment.all
   end
 
   # GET /products/1 or /products/1.json
@@ -51,7 +52,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to '/user/show', notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
   end

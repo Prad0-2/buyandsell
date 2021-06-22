@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'payments/index' 
   get 'payments/show'
   get '/products/:id/payment' ,to: 'payments#new'
- 
+  get '/payments/show/:id' , to: 'payments#show'
+  post '/payments/create' , to: 'payments#create'
+  get '/user/show', to:'home#show'
+  get '/home/display', to: 'home#display'
 
   resources  :details
   resources :products do
@@ -12,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :payments
   get 'details/index'
-  get '/details/edit/:id' , to: 'details#edit', as:'details_edit'
+  get '/details/edit/:id/:product_id' , to: 'details#edit', as:'details_edit'
   patch '/details/edit' , to: 'details#update', as: 'updated_detail'
   get 'pages/home'
   devise_for :views
