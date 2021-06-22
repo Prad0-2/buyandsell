@@ -1,3 +1,4 @@
+<div class="commonContainer">
 <%= form_with(model: @additional, url: product_additionals_path(params[:product_id]) , local: true) do |form| %>
   
   <% if @additional.errors.any? %>
@@ -12,37 +13,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
+  <div class="field inputFieldContainer">
+    <%= form.label :color %></br>
+    <%= form.text_field :color ,:required => true, class:'inputField'%>
   </div>
 
-  <div class="field">
-    <%= form.label :product_age %>
-    <%= form.number_field :product_age %>
+  <div class="field inputFieldContainer">
+    <%= form.label :product_age %></br>
+    <%= form.number_field :product_age ,:required => true, class:'inputField'%>
   </div>
 
-  <div class="field">
-    <%= form.label :imperfections %>
-    <%= form.text_field :imperfections %>
+  <div class="field inputFieldContainer">
+    <%= form.label :imperfections %></br>
+    <%= form.text_field :imperfections ,:required => true, class:'inputField'%>
   </div>
 
-  <div class="field">
-    <%= form.label :waranty %>
-    <%= form.text_field :waranty %>
+  <div class="field inputFieldContainer">
+    <%= form.label :waranty %></br>
+    <%= form.text_field :waranty ,:required => true, class:'inputField'%>
+  </div>
+ 
+  <div class="field inputFieldContainer">
+    <%= form.label :condition %></br>
+    <%= form.text_field :condition ,:required => true, class:'inputField'%>
   </div>
 
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_field :condition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id, value: @productId %>
+  <div class="field" style="visibility:hidden">
+    <%= form.label :product_id %></br>
+    <%= form.text_field :product_id, value: @productId ,:required => true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Additional", class:"productBtn" %>
   </div>
 <% end %>
+</div>

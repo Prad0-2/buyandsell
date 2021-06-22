@@ -1,5 +1,6 @@
-<h1>New Product</h1>
-
+<%= link_to 'Back', root_path %>
+<h1 style="color:#707070;">Enter product details</h1>
+<div style="display:flex;margin-top:50px">
+<img src="/images/newproduct.svg" alt="new product image" width="500" height="500" style="margin-right:100px"/>
 <%= render 'form', product: @product %>
-
-<%= link_to 'Back', products_path %>
+</div> 

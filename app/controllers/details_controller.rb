@@ -8,6 +8,8 @@ class DetailsController < ApplicationController
     render '/payments/new'
   end
   def edit
+    @product_id = params[:product_id]
+    @@productId = params[:product_id]
     @detail = User.find(params[:id]) 
     @@detail_id = params[:id]
   end
@@ -17,7 +19,8 @@ class DetailsController < ApplicationController
     
     respond_to do |format|
       if @detail.update(detail_params)
-        format.html { redirect_to details_index_path(@detail) }
+        a = '/products/'+@@productId +'/payment'
+        format.html { redirect_to a }
       else
         format.html { render 'edit' }
       end
@@ -26,7 +29,7 @@ class DetailsController < ApplicationController
 
   private 
     def detail_params
-      params.require(:user).permit(:name , :email,:number ,:address)
+      params.require(:user).permit(:name, :email, :number ,:address)
     end
 
 end

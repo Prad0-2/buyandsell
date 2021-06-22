@@ -7,7 +7,11 @@
 
 <p>
   <strong>Payment Method:</strong>
-  <%=  @payment.paymentMethod.byteslice(19..-3) %>
+  <%=  @payment.method.byteslice(19..-3) %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%=  @payment.amount %>
 </p>
 
 <br>

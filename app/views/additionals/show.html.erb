@@ -1,33 +1,29 @@
+<div class="showContainer">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Color:</strong>
+<div class="showBox">
+  <h3 class="showKey">Color:</h3>  
   <%= @additional.color %>
-</p>
+</div>
 
-<p>
-  <strong>Product age:</strong>
+
+<div class="showBox">
+  <h3 class="showKey">Age:</h3>  
   <%= @additional.product_age %>
-</p>
+</div>
 
-<p>
-  <strong>Imperfections:</strong>
+<div class="showBox">
+  <h3 class="showKey">Imperfections:</h3>  
   <%= @additional.imperfections %>
-</p>
+</div>
 
-<p>
-  <strong>Waranty:</strong>
+<div class="showBox">
+  <h3 class="showKey">Waranty:</h3>  
   <%= @additional.waranty %>
-</p>
+</div>
 
-<p>
-  <strong>Condition:</strong>
+<div class="showBox">
+  <h3 class="showKey">Condition:</h3>  
   <%= @additional.condition %>
-</p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @additional.product_id %>
-</p>
-
-<%= link_to 'buy',  new_payment_path %>
+</div>
+</div>
