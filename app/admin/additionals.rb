@@ -9,10 +9,10 @@ ActiveAdmin.register Additional do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:color, :product_age, :imperfections, :waranty, :condition, :product_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params do
+    permitted = [:color, :product_age, :imperfections, :waranty, :condition, :product_id]
+    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted
+  end
   
 end

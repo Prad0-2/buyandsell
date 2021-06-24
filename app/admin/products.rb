@@ -9,10 +9,10 @@ ActiveAdmin.register Product do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:name, :category, :description, :buyer_id, :sold_out, :user_id, :amount]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params do
+    permitted = [:name, :category, :description, :buyer_id, :sold_out, :user_id, :amount]
+    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted
+  end
   
 end
