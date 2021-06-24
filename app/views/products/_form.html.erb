@@ -33,20 +33,12 @@
   </div>
 
   
-  <div class="field inputFieldContainer" >
-  <%= form.label :buyer_id %></br>
-  <%= form.number_field :buyer_id %>
-  </div>
+    <div class="field inputFieldContainer" style="visibility:hidden">
+    <%= form.label :user_id %></br>
+    <%= form.text_field :user_id , value: current_user.id%>    
+    </div>  
   
   
-  <div class="field inputFieldContainer">
-  <%= form.label :user_id %></br>
-  <%= form.text_field :user_id , value: current_user.id%>    
-  </div>  
-  <div class="field inputFieldContainer">
-    <%= form.label :sold_out %>
-    <%= form.check_box :sold_out %>
-  </div>  
   
   <div class="actions ">
   <%= form.submit "Submit", class:"productBtn"%>

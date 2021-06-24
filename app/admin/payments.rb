@@ -9,10 +9,10 @@ ActiveAdmin.register Payment do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:method, :user_id, :product_id, :amount]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params do
+    permitted = [:method, :user_id, :product_id, :amount]
+    permitted << :other if params[:action] == 'create' && current_user.admin?
+    permitted
+  end
   
 end
