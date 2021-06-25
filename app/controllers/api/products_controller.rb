@@ -1,7 +1,7 @@
 module Api
-    module V1
+    # module V1
         class ProductsController < ApplicationController
-            protect_from_forgery with: :null_session
+            # protect_from_forgery with: :null_session
             respond_to :json
 
             def index
@@ -60,5 +60,5 @@ module Api
         
 
         end
-    end
+    # end
 end

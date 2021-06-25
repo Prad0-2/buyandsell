@@ -27,10 +27,20 @@ Rails.application.routes.draw do
 
 
   namespace :api, defaults: { format: 'json' } do
-    namespace :v1 do
+    # namespace :v1 do
       resources :products 
-    end
+    # end
+  end
+
+  use_doorkeeper do
+    skip_controllers :authorizations, :applications, :authorized_applications
+  end
+
+  namespace :api do
+    resources :users, only: %i[create]
+    resources :bookmarks, only: %i[index]
   end
 
 
 end
+# Doorkeeper::AccessToken.all

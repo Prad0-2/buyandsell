@@ -37,7 +37,11 @@
     <%= form.label :user_id %></br>
     <%= form.text_field :user_id , value: current_user.id%>    
     </div>  
-  
+
+    <div class="field inputFieldContainer" style="visibility:hidden">
+    <%= form.label :Sold_Out %></br>
+    <%= form.check_box :sold_out %>    
+    </div>  
   
   
   <div class="actions ">

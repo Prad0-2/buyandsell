@@ -14,5 +14,11 @@ class User < ApplicationRecord
   validates :name , :address , length: { minimum: 3 , message: "Enter a valid %{attribute}"} ,on: :update
 
   validates :name , :address , :number , presence: true, on: :update
+  
+  def self.authenticate(email, password)
+    user = User.find_for_authentication(email: email)
+    user&.valid_password?(password) ? user : nil
+  end
+
 end
  
